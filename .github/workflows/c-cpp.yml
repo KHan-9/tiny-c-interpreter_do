@@ -10,11 +10,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: fedora:41
 
     steps:
     - uses: actions/checkout@v4
     - name: deps
-      run: sudo apt-get -y update && sudo apt-get install make diff gcc readline-devel
+      run: sudo dnf -assumeyes update && sudo dnf -assumeyes install make diff gcc readline-devel
     - name: make
       run: make
     - name: make test
