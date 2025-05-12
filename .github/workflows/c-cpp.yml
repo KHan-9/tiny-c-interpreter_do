@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: deps
-      run: sudo dnf -assumeyes update && sudo dnf -assumeyes install make diff gcc readline-devel
+      run: sudo dnf -y update && sudo dnf -y install make diff gcc readline-devel
     - name: make
       run: make
     - name: make test
